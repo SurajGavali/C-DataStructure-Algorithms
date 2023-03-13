@@ -7,13 +7,13 @@ struct Node{
 	struct Node* next;
 }Node;
 
-int InsertElementAtBeginingOfList(int x);
+void InsertElementAtBeginingOfList(int x);
 void Print();
 
 struct Node* head;
 
 
-int InsertElementAtBeginingOfList(int x){
+void InsertElementAtBeginingOfList(int x){
 	
 	struct Node* temp = malloc(sizeof(Node)); //created new node of type Node
 
@@ -46,6 +46,7 @@ int main(){
 		
 		printf("Enter a number :: ");
 		scanf("%d",&num);
+		
 		InsertElementAtBeginingOfList(num);
 		Print();
 	}
