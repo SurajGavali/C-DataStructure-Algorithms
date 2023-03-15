@@ -11,6 +11,7 @@ struct Node {
 void InsertElementAtAnyPos(int p,int v);
 void Print();
 void Delete();
+void Reverse();
 struct Node* head;
 
 void Delete(int n){
@@ -49,6 +50,20 @@ void Print(){
 
 	}
 	printf("\n");
+}
+
+void Reverse(){
+
+    struct Node *prev,*current,*next;
+    current = head;
+    prev = NULL;
+    while(current != NULL){
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
 }
 
 void InsertElementAtAnyPos(int p,int v){
@@ -116,5 +131,9 @@ int main(){
 	printf("\nYou want to exit? if yes enter 0 or else enter 1 :: ");
         scanf("%d",&flag);
     }
+    Reverse();
+
+    printf("Reversed List :: ");
+    Print();
     return 0;
 }
